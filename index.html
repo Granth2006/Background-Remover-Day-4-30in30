@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Remover Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span class="material-icons">auto_fix_high</span>
+                <h1>BG Remover Pro</h1>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="icon-btn" title="Toggle Dark Mode">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Configuration Section -->
+            <div class="config-section card">
+                <h3>API Configuration</h3>
+                <p>Enter your <a href="https://www.remove.bg/" target="_blank">remove.bg</a> API key to enable background removal.</p>
+                <div class="input-group">
+                    <input type="password" id="apiKeyInput" placeholder="Enter API Key here...">
+                    <button class="btn btn-secondary" id="saveApiKeyBtn">Save</button>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div id="uploadSection" class="upload-section card">
+                <div class="dropzone" id="dropzone">
+                    <input type="file" id="fileInput" accept="image/jpeg, image/png, image/webp" hidden>
+                    <div class="dropzone-content">
+                        <span class="material-icons upload-icon">cloud_upload</span>
+                        <h2>Drag & Drop your image here</h2>
+                        <p>or</p>
+                        <button class="btn btn-primary" id="browseBtn">Browse File</button>
+                        <p class="file-info-text">Supports JPG, PNG, WEBP (Max 5MB)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview & Action Section -->
+            <div id="actionSection" class="action-section card hidden">
+                <div class="preview-header">
+                    <h2>Image Preview</h2>
+                    <button class="btn btn-text" id="resetBtn1"><span class="material-icons">close</span></button>
+                </div>
+                
+                <div class="image-preview-container">
+                    <img id="originalPreview" src="" alt="Original Image">
+                </div>
+                
+                <div class="image-stats" id="originalStats">
+                    <span><strong>Size:</strong> <span id="statSize">-</span></span>
+                    <span><strong>Resolution:</strong> <span id="statRes">-</span></span>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="removeBgBtn" class="btn btn-primary btn-large">
+                        <span class="material-icons">auto_fix_high</span> Remove Background
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="loadingSection" class="loading-section card hidden">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                </div>
+                <h3 id="loadingText">Processing Image...</h3>
+                <p class="loading-subtext">This may take a few seconds.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="resultSection" class="result-section card hidden">
+                <h2>Result</h2>
+                
+                <!-- Before/After Slider -->
+                <div class="slider-container" id="sliderContainer">
+                    <div class="background-checkerboard">
+                        <div class="img-layer result-layer" id="resultLayer">
+                            <img id="resultImage" src="" alt="Processed Image">
+                        </div>
+                    </div>
+                    <div class="img-layer original-layer" id="originalLayer">
+                        <img id="sliderOriginalImage" src="" alt="Original Image">
+                    </div>
+                    <div class="slider-handle" id="sliderHandle">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">
+                            <span class="material-icons">swap_horiz</span>
+                        </div>
+                    </div>
+                    <input type="range" class="slider-input" id="sliderInput" min="0" max="100" value="50">
+                </div>
+
+                <div class="result-controls">
+                    <div class="control-group">
+                        <label>Background Color</label>
+                        <div class="color-picker-container">
+                            <button class="color-btn transparent-btn active" data-color="transparent" title="Transparent"></button>
+                            <button class="color-btn" data-color="#ffffff" style="background:#ffffff; border: 1px solid #ddd;" title="White"></button>
+                            <button class="color-btn" data-color="#000000" style="background:#000000;" title="Black"></button>
+                            <input type="color" id="customColorPicker" value="#4CAF50" title="Custom Color">
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons result-actions">
+                        <button class="btn btn-secondary" id="resetBtn2">
+                            <span class="material-icons">refresh</span> Start Over
+                        </button>
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <span class="material-icons">download</span> Download Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Canvas for rendering final image with background -->
+    <canvas id="exportCanvas" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
