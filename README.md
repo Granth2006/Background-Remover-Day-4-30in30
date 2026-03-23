@@ -13,7 +13,7 @@
 
 <br/>
 
-[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-bg--remover--30in30.vercel.app-0ea5e9?style=for-the-badge)](https://bg-remover-30in30.vercel.app/)
+[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-https://background-remover-30in30.vercel.app/-0ea5e9?style=for-the-badge)](https://background-remover-30in30.vercel.app/)
 &nbsp;&nbsp;
 [![GitHub](https://img.shields.io/badge/⭐%20GitHub-Granth2006-24292e?style=for-the-badge&logo=github)](https://github.com/Granth2006)
 
@@ -78,7 +78,7 @@
 | 🏆 **Challenge** | 30 Web Apps in 30 Days |
 | 📅 **Day** | Day 4 / 30 |
 | 👤 **Author** | Granth Kumar |
-| 🌐 **Live URL** | [bg-remover-30in30.vercel.app](https://bg-remover-30in30.vercel.app/) |
+| 🌐 **Live URL** | [https://background-remover-30in30.vercel.app/](https://background-remover-30in30.vercel.app/) |
 | 🛠️ **Build** | No build step — pure HTML / CSS / JS |
 | 📄 **License** | MIT |
 
@@ -102,6 +102,6 @@
 
 Built by **[Granth Kumar](https://github.com/Granth2006)** &nbsp;·&nbsp; Part of the **30 Web Apps in 30 Days** challenge
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Open%20Live%20Demo-0ea5e9?style=for-the-badge)](https://bg-remover-30in30.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🚀%20Open%20Live%20Demo-0ea5e9?style=for-the-badge)](https://background-remover-30in30.vercel.app/)
 
 </div>
