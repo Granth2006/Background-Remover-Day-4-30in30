@@ -279,10 +279,8 @@ removeBgBtn.addEventListener('click', async () => {
 // Slider logic
 sliderInput.addEventListener('input', (e) => {
     const value = e.target.value;
-    // value represents slider original %
-    const percentage = 100 - value; 
-    // If value is 0 (slider at left), we want Original image to have 100% width
-    originalLayer.style.width = `${100 - value}%`;
+    // Use clip-path to prevent image squishing/distortion
+    originalLayer.style.clipPath = `polygon(0 0, ${value}% 0, ${value}% 100%, 0 100%)`;
     sliderHandle.style.left = `${value}%`;
 });
 
