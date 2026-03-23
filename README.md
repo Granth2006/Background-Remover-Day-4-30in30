@@ -13,7 +13,7 @@
 
 <br/>
 
-[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-https://background-remover-30in30.vercel.app/-0ea5e9?style=for-the-badge)](https://background-remover-30in30.vercel.app/)
+[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-https://background-remover-30in30.vercel.app-0ea5e9?style=for-the-badge)](https://background-remover-30in30.vercel.app/)
 &nbsp;&nbsp;
 [![GitHub](https://img.shields.io/badge/⭐%20GitHub-Granth2006-24292e?style=for-the-badge&logo=github)](https://github.com/Granth2006)
 
